@@ -1,0 +1,18 @@
+.amountContainer    {
+    color: rgb(228, 54, 83);
+    font-weight: bold;
+}
+.expenseContainer {
+    background: #FFF;
+    margin: 10px;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.expenseContainer:hover {
+    border: .1rem solid;
+    border-color: #975AC4;
+    cursor: pointer;
+}

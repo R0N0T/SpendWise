@@ -1,2 +1,0 @@
-const {username, password} = process.env;
-export const connectionSrt = "mongodb+srv://singhrohit1024:<password>@learnmongodb.qil269e.mongodb.net/spendWise?retryWrites=true&w=majority&appName=LearnMongoDB";

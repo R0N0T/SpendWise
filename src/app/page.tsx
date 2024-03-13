@@ -1,10 +1,9 @@
-import HomePage from "./components/homePage";
 import Expenses from "./components/expenses";
+import Navbar from "./components/navbar/navbar";
 export default function Home() {
   return (
     <main>
-      SpendWise
-      <HomePage />
+      <Navbar />
       <Expenses />
     </main>
   );

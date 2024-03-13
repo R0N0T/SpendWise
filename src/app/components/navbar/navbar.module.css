@@ -1,0 +1,8 @@
+.mainContainer  {
+    position: sticky;
+    top: 0;
+    background:  #D3D6DF;
+}
+.nav    {
+    display: flex;
+}
