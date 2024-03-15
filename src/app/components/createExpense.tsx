@@ -2,7 +2,7 @@
 import {useState} from 'react';
 import Image from 'next/image';
 import createExpenseImage from '@/app/assets/createExpense.jpg' 
-export default function createExpense () {
+export default function CreateExpense () {
 
     const [amount, setAmount] = useState("");
     const [category, setCategory] = useState("");
