@@ -22,7 +22,7 @@ export default function EditExpense() {
     useEffect(() => {
         const fetchExpenses = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/getExpense');
+                const response = await fetch('api/getExpense');
                 if (!response.ok) {
                     throw new Error('Failed to fetch expenses');
                 }
