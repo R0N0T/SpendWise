@@ -9,7 +9,7 @@ interface Expense {
 }
 
 export default function Expenses() {
-    console.log(expenses);
+    // console.log(expenses);
 
     return (
         <main className={styles.main}>
