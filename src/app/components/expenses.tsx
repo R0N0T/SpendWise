@@ -1,4 +1,5 @@
 import expenses from '@/app/data.json';
+import styles from '@/app/components/expenses.module.css'
 
 interface Expense {
     date: string;
@@ -8,20 +9,20 @@ interface Expense {
 }
 
 export default function Expenses() {
-    console.log(expenses);
+    // console.log(expenses);
 
     return (
-        <main>
-            <ul>
-                {expenses.map((expense: Expense, index: number) => (
-                    <li key={index}>
-                        <div>Date : {expense.date}</div>
-                        <div>Amount : {expense.amount}</div>
-                        <div>Description : {expense.description}</div>
-                        <div>Category : {expense.category}</div>
-                    </li>
-                ))}
-            </ul>
+        <main className={styles.main}>
+            {expenses.map((expense: Expense, index: number) => (
+                <ul key={index} className={styles.expenseContainer}>
+                    <div>
+                        <div>{expense.category}</div>
+                        <div>{expense.description}</div>
+                        <div>{expense.date}</div>
+                    </div>
+                    <div className={styles.amountContainer}>-₹{expense.amount}</div>
+                </ul>
+            ))}
         </main>
     );
 }
