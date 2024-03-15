@@ -18,7 +18,7 @@ export default function CreateExpense () {
             description
         };
         try {
-            const response = await fetch('http://localhost:3000/api/postExpense', {
+            const response = await fetch('api/postExpense', {
                 method: "POST",
                 body: JSON.stringify(data)
             });
