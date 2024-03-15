@@ -64,7 +64,7 @@ export default function EditExpense() {
                 throw new Error('Failed to update expense');
             }
             result = await result.json();
-            alert(`Expense edited successfully`); // Alert on successful edit
+            alert(`Expense edited successfully`); 
             console.log(result);
         } catch (error) {
             console.error('Error updating expense:', error);

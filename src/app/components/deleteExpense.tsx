@@ -5,7 +5,7 @@ type DeleteExpenseProps = {
 export default function DeleteExpense({ id }: DeleteExpenseProps) {
   const deleteExpense = async() => {
     try {
-      const url = `http://localhost:3000/api/deleteExpense/${id}`;
+      const url = `api/deleteExpense/${id}`;
       const response = await fetch(url, {
         method: "DELETE"
       });
