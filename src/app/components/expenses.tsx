@@ -1,6 +1,9 @@
 'use client';
 import styles from '@/app/components/expenses.module.css';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import DeleteExpense from './deleteExpense';
+import EditExpense from './edit-expense/editExpense';
 
 interface Expense {
     _id: string;
@@ -45,6 +48,12 @@ export default function Expenses() {
                         <div>{expense.date}</div>
                     </div>
                     <div className={styles.amountContainer}>-₹{expense.amount}</div>
+                    <div>
+                        <Link href={`/edit-expense/${expense._id}`}>
+                            <button>Edit</button>
+                        </Link>
+                        <DeleteExpense id={expense._id}/>
+                    </div>
                 </ul>
             ))}
         </main>
