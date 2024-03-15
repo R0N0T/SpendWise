@@ -1,7 +1,9 @@
-import expenses from '@/app/data.json';
-import styles from '@/app/components/expenses.module.css'
+'use client';
+import styles from '@/app/components/expenses.module.css';
+import { useState, useEffect } from 'react';
 
 interface Expense {
+    _id: string;
     date: string;
     amount: string;
     category: string;
@@ -9,12 +11,34 @@ interface Expense {
 }
 
 export default function Expenses() {
-    // console.log(expenses);
+    const [expenses, setExpenses] = useState<Expense[]>([]); 
 
+    useEffect(() => {
+        const fetchExpenses = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/api/getExpense');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch expenses');
+                }
+                const data = await response.json();
+                if (data.success) {
+                    setExpenses(data.result);  
+                } else {
+                    throw new Error('Failed to fetch expenses');
+                }
+            } catch (error) {
+                console.error('Error fetching expenses:', error);
+            }
+        };
+        fetchExpenses();
+    }, []);
+    if (expenses.length === 0) {
+        return <div>No Transactions added</div>;
+    }
     return (
         <main className={styles.main}>
-            {expenses.map((expense: Expense, index: number) => (
-                <ul key={index} className={styles.expenseContainer}>
+            {expenses.map((expense: Expense) => (
+                <ul key={expense._id} className={styles.expenseContainer}>
                     <div>
                         <div>{expense.category}</div>
                         <div>{expense.description}</div>

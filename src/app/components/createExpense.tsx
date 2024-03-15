@@ -9,12 +9,31 @@ export default function CreateExpense () {
     const [date, setDate] = useState("");
     const [description, setDescription] = useState("");
 
-    function handleSubmit (e : any) {
+    async function handleSubmit (e : any) {
         e.preventDefault();
-        setDate('');
-        setAmount('');
-        setCategory('');
-        setDescription('');
+        const data = {
+            amount,
+            category,
+            date,
+            description
+        };
+        try {
+            const response = await fetch('http://localhost:3000/api/postExpense', {
+                method: "POST",
+                body: JSON.stringify(data)
+            });
+            if (!response.ok) {
+                throw new Error('Failed to submit expense');
+            }
+            setDate('');
+            setAmount('');
+            setCategory('');
+            setDescription('');
+            alert('Expense submitted successfully');
+        } catch (error) {
+            console.error('Error submitting expense:', error);
+            alert('Failed to submit expense');
+        }
     }
     return (
         <form onSubmit={handleSubmit}>
