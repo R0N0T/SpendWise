@@ -5,7 +5,7 @@ type DeleteExpenseProps = {
 export default function DeleteExpense({ id }: DeleteExpenseProps) {
   const deleteExpense = async() => {
     try {
-      const url = `https://spendwise-ronot.vercel.app/api/deleteExpense/${id}`;
+      const url = `/api/deleteExpense/${id}`;
       const response = await fetch(url, {
         method: "DELETE"
       });

@@ -22,7 +22,7 @@ export default function EditExpense() {
     useEffect(() => {
         const fetchExpenses = async () => {
             try {
-                const response = await fetch('https://spendwise-ronot.vercel.app/api/getExpense');
+                const response = await fetch('/api/getExpense');
                 if (!response.ok) {
                     throw new Error('Failed to fetch expenses');
                 }
@@ -53,7 +53,7 @@ export default function EditExpense() {
     async function handleEdit(e: any) {
         e.preventDefault(); 
         try {
-            let result = await fetch(`https://spendwise-ronot.vercel.app/api/putExpense/${id}`, {
+            let result = await fetch(`/api/putExpense/${id}`, {
                 method: "PUT",
                 body: JSON.stringify({ amount, category, date, description }),
                 headers: {
