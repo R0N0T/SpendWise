@@ -3,7 +3,6 @@ import styles from '@/app/components/expenses.module.css';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import DeleteExpense from './deleteExpense';
-import EditExpense from './edit-expense/editExpense';
 
 interface Expense {
     _id: string;
@@ -19,7 +18,7 @@ export default function Expenses() {
     useEffect(() => {
         const fetchExpenses = async () => {
             try {
-                const response = await fetch('api/getExpense');
+                const response = await fetch('https://spendwise-ronot.vercel.app/api/getExpense');
                 if (!response.ok) {
                     throw new Error('Failed to fetch expenses');
                 }

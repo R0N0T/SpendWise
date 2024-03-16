@@ -18,7 +18,7 @@ export default function CreateExpense () {
             description
         };
         try {
-            const response = await fetch('api/postExpense', {
+            const response = await fetch('https://spendwise-ronot.vercel.app/api/postExpense', {
                 method: "POST",
                 body: JSON.stringify(data)
             });
