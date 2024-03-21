@@ -2,7 +2,7 @@
 # SpendWise Expense Tracker
 
 SpendWise is a simple expense tracker built with Next.js where users can easily track their daily spending and add new expenses on the go.
-
+![Screenshot](<Screenshot 2024-03-21 180402.png>) ![Screenshot](<Screenshot 2024-03-21 180354.png>)
 ## Setup
 
 To set up the SpendWise Expense Tracker project, follow these steps:
