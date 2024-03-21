@@ -1,0 +1,99 @@
+/* expenses.module.css */
+
+/* Styling for the amount container */
+.amountContainer {
+  color: rgb(228, 54, 83);
+  font-weight: bold;
+}
+
+/* Styling for buttons */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Secondary button style */
+.button.secondary {
+  background-color: #6c757d;
+}
+
+.button.secondary:hover {
+  background-color: #545b62;
+}
+
+/* Large button style */
+.button.large {
+  padding: 15px 30px;
+  font-size: 18px;
+}
+
+/* Small button style */
+.button.small {
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+/* Styling for expense container */
+.expenseContainer {
+  background: #fff;
+  margin: 10px auto; /* Center the container horizontally */
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: calc(50% - 40px); /* Decrease width by 40px to accommodate the margin */
+  border: 2px solid #ddd; /* Add border instead of box shadow */
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover effect for expense container */
+.expenseContainer:hover {
+  transform: translateY(-5px);
+  border-color: #975ac4; /* Change border color on hover */
+  cursor: pointer;
+}
+
+/* Styling for individual expense items */
+.expense-item {
+  /* Add specific styles for individual expense items here if needed */
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  position: relative; /* Add position relative for absolute positioning */
+}
+
+/* Styling for the category */
+.expense-item .category {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Styling for the description */
+.expense-item .description {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* Styling for the date */
+.expense-item .date {
+  color: #999;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+

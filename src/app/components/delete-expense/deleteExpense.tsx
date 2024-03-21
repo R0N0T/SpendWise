@@ -1,4 +1,5 @@
 'use client'
+import styles from "@/app/components/delete-expense/deleteExpense.module.css"
 type DeleteExpenseProps = {
   id: string;
 };
@@ -20,6 +21,6 @@ export default function DeleteExpense({ id }: DeleteExpenseProps) {
   };
 
   return (
-    <button onClick={deleteExpense}>Delete</button>
+    <button onClick={deleteExpense} className={styles.button}>Delete</button>
   );
 }
