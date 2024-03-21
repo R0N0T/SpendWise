@@ -1,3 +1,43 @@
 body {
-  background:  #D3D6DF;
+  margin:0px;
+  background:  #FFFFFF;
+}
+/* styles.css */
+
+body button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+body button:hover {
+  background-color: #0056b3;
+}
+
+/* Additional styles for differentbody button variations */
+body button.secondary {
+  background-color: #6c757d;
+}
+
+body button.secondary:hover {
+  background-color: #545b62;
+}
+
+body button.large {
+  padding: 15px 30px;
+  font-size: 18px;
+}
+
+body button.small {
+  padding: 8px 15px;
+  font-size: 14px;
 }

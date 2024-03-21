@@ -1,6 +1,9 @@
 'use client'
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import Image from 'next/image';
+import createExpenseImage from '@/app/assets/createExpense.jpg';
+import styles from '@/app/components/edit-expense/editExpense.module.css'; // Import CSS module
 
 interface Expense {
     _id: string;
@@ -22,7 +25,7 @@ export default function EditExpense() {
     useEffect(() => {
         const fetchExpenses = async () => {
             try {
-                const response = await fetch('https://spendwise-ronot.vercel.app/api/getExpense');
+                const response = await fetch('/api/getExpense');
                 if (!response.ok) {
                     throw new Error('Failed to fetch expenses');
                 }
@@ -53,7 +56,7 @@ export default function EditExpense() {
     async function handleEdit(e: any) {
         e.preventDefault(); 
         try {
-            let result = await fetch(`https://spendwise-ronot.vercel.app/api/putExpense/${id}`, {
+            let result = await fetch(`/api/putExpense/${id}`, {
                 method: "PUT",
                 body: JSON.stringify({ amount, category, date, description }),
                 headers: {
@@ -73,44 +76,55 @@ export default function EditExpense() {
     
 
     return (
-        <form onSubmit={handleEdit}>
-            {editExpense && (
+        <form className={styles.formContainer} onSubmit={handleEdit}>
+            {editExpense && <>
+                <Image
+                className={styles.image}
+                height={200}
+                width={200}
+                src={createExpenseImage}
+                alt="Create Expense Image"
+              />
                 <ul key={editExpense._id}>
                     <div>
-                        <label>Amount</label>
+                        <label className={styles.label}>Amount</label>
                         <input
+                            className={styles.inputField}
                             type="number"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
                         />
                     </div>
                     <div>
-                        <label>Category</label>
+                        <label className={styles.label}>Category</label>
                         <input
+                            className={styles.inputField}
                             type="text"
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
                         />
                     </div>
                     <div>
-                        <label>Date</label>
+                        <label className={styles.label}>Date</label>
                         <input
-                            type="text"
+                            className={styles.inputField}
+                            type="date"
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
                         />
                     </div>
                     <div>
-                        <label>Description</label>
+                        <label className={styles.label}>Description</label>
                         <input
+                            className={styles.inputField}
                             type="text"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                         />
                     </div>
                 </ul>
-            )}
-            <button type="submit">Submit</button>
+            </>}
+            <button className={styles.submitButton} type="submit" style={{marginLeft:'2rem'}}>Submit</button>
         </form>
     )
 }

@@ -1,4 +1,4 @@
-import CreateExpense from "../components/createExpense";
+import CreateExpense from "../components/create-expense/createExpense";
 
 export default function ExpensePage () {
     
