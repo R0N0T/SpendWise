@@ -73,7 +73,6 @@
   border-radius: 8px;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
-  position: relative; /* Add position relative for absolute positioning */
 }
 
 /* Styling for the category */
