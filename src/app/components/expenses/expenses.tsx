@@ -13,7 +13,7 @@ interface Expense {
 }
 
 export default function Expenses() {
-    const [expenses, setExpenses] = useState<Expense[]>([]); 
+    const [expenses, setExpenses] = useState<Expense[]>([]);
 
     useEffect(() => {
         const fetchExpenses = async () => {
@@ -24,7 +24,7 @@ export default function Expenses() {
                 }
                 const data = await response.json();
                 if (data.success) {
-                    setExpenses(data.result);  
+                    setExpenses(data.result);
                 } else {
                     throw new Error('Failed to fetch expenses');
                 }
@@ -35,7 +35,7 @@ export default function Expenses() {
         fetchExpenses();
     }, []);
     if (expenses.length === 0) {
-        return <div>No Transactions added</div>;
+        return <div className={styles.loader}></div>;
     }
     return (
         <main className={styles.main}>
@@ -49,9 +49,9 @@ export default function Expenses() {
                     <div className={styles.amountContainer}>-₹{expense.amount}</div>
                     <div>
                         <Link href={`/edit-expense/${expense._id}`}>
-                            <button className={styles.button} style={{marginRight:'1rem'}}>Edit</button>
+                            <button className={styles.button} style={{ marginRight: '1rem' }}>Edit</button>
                         </Link>
-                        <DeleteExpense id={expense._id}/>
+                        <DeleteExpense id={expense._id} />
                     </div>
                 </ul>
             ))}
