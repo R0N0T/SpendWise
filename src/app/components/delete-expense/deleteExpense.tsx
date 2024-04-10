@@ -15,6 +15,7 @@ export default function DeleteExpense({ id }: DeleteExpenseProps) {
       }
       const result = await response.json();
       console.log(result);
+      alert('Expense deleted successfully');
     } catch (error) {
       console.error('Error deleting expense:', error);
     }
