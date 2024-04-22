@@ -11,7 +11,7 @@ export default function Navbar() {
                     <Link href="/create-expense">Add expense</Link>    
                 </ul>
                 <ul>
-                    <Link href="income">Income</Link>
+                    <Link href="/upload-expense">Upload Expense</Link>
                 </ul>
                 <ul>
                     <Link href="/report">Report</Link>

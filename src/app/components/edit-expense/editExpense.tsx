@@ -41,8 +41,8 @@ export default function EditExpense() {
         };
         fetchExpenses();
     }, []);
-    
-    const id = pathname.slice(14); 
+
+    const id = pathname.slice(14);
     useEffect(() => {
         const filteredExpense = expenses.find(expense => expense._id === id);
         if (filteredExpense) {
@@ -54,7 +54,7 @@ export default function EditExpense() {
         }
     }, [expenses, pathname]);
     async function handleEdit(e: any) {
-        e.preventDefault(); 
+        e.preventDefault();
         try {
             let result = await fetch(`/api/putExpense/${id}`, {
                 method: "PUT",
@@ -67,24 +67,24 @@ export default function EditExpense() {
                 throw new Error('Failed to update expense');
             }
             result = await result.json();
-            alert(`Expense edited successfully`); 
+            alert(`Expense edited successfully`);
             console.log(result);
         } catch (error) {
             console.error('Error updating expense:', error);
         }
     }
-    
+
 
     return (
         <form className={styles.formContainer} onSubmit={handleEdit}>
             {editExpense && <>
                 <Image
-                className={styles.image}
-                height={200}
-                width={200}
-                src={createExpenseImage}
-                alt="Create Expense Image"
-              />
+                    className={styles.image}
+                    height={200}
+                    width={200}
+                    src={createExpenseImage}
+                    alt="Create Expense Image"
+                />
                 <ul key={editExpense._id}>
                     <div>
                         <label className={styles.label}>Amount</label>
@@ -124,7 +124,7 @@ export default function EditExpense() {
                     </div>
                 </ul>
             </>}
-            <button className={styles.submitButton} type="submit" style={{marginLeft:'2rem'}}>Submit</button>
+            <button className={styles.submitButton} type="submit" style={{ marginLeft: '2rem' }}>Submit</button>
         </form>
     )
 }
